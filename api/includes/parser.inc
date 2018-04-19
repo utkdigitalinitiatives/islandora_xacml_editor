@@ -43,12 +43,12 @@ class XacmlParser {
     if ($dom->documentElement->tagName != 'Policy') {
       throw new XacmlException('Root tag is not Policy.');
     }
-
+/*
     // See if the policy was written by islandora, othewise throw an exception.
     if (!$dom->documentElement->hasAttribute('PolicyId') || $dom->documentElement->getAttribute("PolicyId") != 'islandora-xacml-editor-v1') {
       throw new XacmlException('XACML file was not written by XACML Editor.');
     }
-
+*/
     $xpath = new DomXpath($dom);
     $xpath->registerNamespace('xacml', XacmlConstants::XACML);
     XacmlParser::parseXacml($xacml, $dom, $xpath);
